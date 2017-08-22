@@ -1264,6 +1264,30 @@ uses
 {$ENDIF}
   Math, uibconst, uibkeywords;
 
+function StrScan(const Str: PAnsiChar; Chr: AnsiChar): PAnsiChar;
+begin
+  Result := {$if CompilerVersion > 25}AnsiStrings{$ELSE}SysUtils{$ENDIF}
+    .StrScan(Str, Chr);
+end;
+
+function StrLower(const Str: PAnsiChar): PAnsiChar;
+begin
+  Result := {$if CompilerVersion > 25}AnsiStrings{$ELSE}SysUtils{$ENDIF}
+    .StrLower(Str);
+end;
+
+function StrIComp(const Str1, Str2: PAnsiChar): Integer;
+begin
+  Result := {$if CompilerVersion > 25}AnsiStrings{$ELSE}SysUtils{$ENDIF}
+    .StrIComp(Str1, Str2);
+end;
+
+function StrLIComp(const Str1, Str2: PAnsiChar; const MaxLen: Cardinal): Integer;
+begin
+  Result := {$if CompilerVersion > 25}AnsiStrings{$ELSE}SysUtils{$ENDIF}
+    .StrLIComp(Str1, Str2, MaxLen);
+end;
+
 function MBUEncode(const str: UnicodeString; cp: Word): RawByteString;
 begin
 {$IFDEF MSWINDOWS}
@@ -6589,7 +6613,7 @@ procedure TSQLParams.AddFieldType(const Name: string; FieldType: TUIBFieldType;
         'b','B':
           begin
             if not ((dest > 0) and {$IFDEF UNICODE}(src[-1] < #256) and {$ENDIF} ({$IFDEF FPC}PrevChar(src){$ELSE}AnsiChar(src[-1]){$ENDIF}
-              in Identifiers)) and (StrIComp(PChar(copy(Src, 0, 5)), 'begin') = 0) and
+              in Identifiers)) and (StrIComp(PAnsiChar(copy(Src, 0, 5)), 'begin') = 0) and
                 not ({$IFDEF UNICODE}(Src[5] < #256) and{$ENDIF}(AnsiChar(Src[5]) in Identifiers)) then
                   while (Src^ <> #0) do Next else next;
           end;
@@ -6598,7 +6622,7 @@ procedure TSQLParams.AddFieldType(const Name: string; FieldType: TUIBFieldType;
         'd','D':
           begin
             if not ((dest > 0) and {$IFDEF UNICODE}(src[-1] < #256) and {$ENDIF} ({$IFDEF FPC}PrevChar(src){$ELSE}AnsiChar(src[-1]){$ENDIF}
-              in Identifiers)) and (StrIComp(PChar(copy(Src, 0, 7)), 'declare') = 0) and
+              in Identifiers)) and (StrIComp(PAnsiChar(copy(Src, 0, 7)), 'declare') = 0) and
                 not ({$IFDEF UNICODE} (Src[7] < #256) and {$ENDIF}(AnsiChar(Src[7]) in Identifiers)) then
                   while (Src^ <> #0) do Next else next;
           end;

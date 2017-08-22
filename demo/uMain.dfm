@@ -1,7 +1,7 @@
-object Form1: TForm1
+object fMain: TfMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'AtWS Demo'
   ClientHeight = 629
   ClientWidth = 955
   Color = clBtnFace
@@ -11,6 +11,9 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  DesignSize = (
+    955
+    629)
   PixelsPerInch = 96
   TextHeight = 13
   object Memo1: TMemo
@@ -19,7 +22,6 @@ object Form1: TForm1
     Width = 713
     Height = 629
     Align = alLeft
-    Anchors = [akLeft, akTop, akRight, akBottom]
     Lines.Strings = (
       '<?xml version="1.0" standalone="no"?>'
       '<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">'
@@ -28,7 +30,7 @@ object Form1: TForm1
         '    <wss:Security xmlns:wss="http://schemas.xmlsoap.org/ws/2002/' +
         '12/secext">'
       '      <wss:UsernameToken>'
-      '        <wss:Username>555555550/1</wss:Username>'
+      '        <wss:Username>207250618/1</wss:Username>'
       '        <wss:Nonce></wss:Nonce>'
       '        <wss:Password>123456789</wss:Password>'
       '        <wss:Created></wss:Created>'
@@ -39,7 +41,7 @@ object Form1: TForm1
       
         '    <ns2:envioDocumentoTransporteRequestElem xmlns:ns2="https://' +
         'servicos.portaldasfinancas.gov.pt/sgdtws/documentosTransporte/">'
-      '      <TaxRegistrationNumber>555555550</TaxRegistrationNumber>'
+      '      <TaxRegistrationNumber>207250618</TaxRegistrationNumber>'
       '      <CompanyName>Coiso e Tal Lda.</CompanyName>'
       '      <CompanyAddress>'
       '        <Addressdetail>L'#225' Mesmo N 6 Lj 3</Addressdetail>'
@@ -49,7 +51,7 @@ object Form1: TForm1
       '      </CompanyAddress>'
       '      <DocumentNumber>GT 001/528</DocumentNumber>'
       '      <MovementStatus>N</MovementStatus>'
-      '      <MovementDate>2013-06-07</MovementDate>'
+      '      <MovementDate>2017-08-16</MovementDate>'
       '      <MovementType>GT</MovementType>'
       '      <CustomerTaxID>999999990</CustomerTaxID>'
       '      <CustomerAddress>'
@@ -71,7 +73,7 @@ object Form1: TForm1
       '        <PostalCode>9999-144</PostalCode>'
       '        <Country>PT</Country>'
       '      </AddressFrom>'
-      '      <MovementStartTime>2013-09-28T14:50:00</MovementStartTime>'
+      '      <MovementStartTime>2017-08-18T14:50:00</MovementStartTime>'
       '      <VehicleID>AA-00-00</VehicleID>'
       '      <Line>'
       '        <ProductDescription>Papel A4</ProductDescription>'
@@ -84,22 +86,43 @@ object Form1: TForm1
       '</S:Envelope>')
     TabOrder = 0
   end
-  object Button2: TButton
+  object bSetupProductionWS: TButton
     Left = 736
-    Top = 88
+    Top = 56
     Width = 201
-    Height = 57
-    Caption = 'Produ'#231#227'o'
+    Height = 42
+    Anchors = [akLeft, akTop, akRight]
+    Caption = 'Inicializar Webservice de Produ'#231#227'o'
     TabOrder = 1
-    OnClick = Button2Click
+    OnClick = bSetupProductionWSClick
   end
-  object Button1: TButton
+  object bSetupTestingWS: TButton
     Left = 736
-    Top = 15
+    Top = 8
     Width = 201
-    Height = 57
-    Caption = 'Testes'
+    Height = 42
+    Anchors = [akLeft, akTop, akRight]
+    Caption = 'Inicializar Webservice de Testes'
     TabOrder = 2
-    OnClick = Button1Click
+    OnClick = bSetupTestingWSClick
+  end
+  object Memo2: TMemo
+    Left = 719
+    Top = 151
+    Width = 236
+    Height = 478
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 3
+  end
+  object bSendDoc: TButton
+    Left = 736
+    Top = 103
+    Width = 201
+    Height = 42
+    Anchors = [akLeft, akTop, akRight]
+    Caption = 'Enviar documento'
+    Enabled = False
+    TabOrder = 4
+    OnClick = bSendDocClick
   end
 end

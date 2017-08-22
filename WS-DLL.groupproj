@@ -3,10 +3,10 @@
         <ProjectGuid>{A984313B-7D3B-4F7E-B312-9E9FD199745C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="TestesDLLs.dproj">
+        <Projects Include="demo\AtWS_Demo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="ATWSDocTransp.dproj">
+        <Projects Include="src\AtWS.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,32 +17,32 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="TestesDLLs">
-        <MSBuild Projects="TestesDLLs.dproj"/>
+    <Target Name="AtWS_Demo">
+        <MSBuild Projects="demo\AtWS_Demo.dproj"/>
     </Target>
-    <Target Name="TestesDLLs:Clean">
-        <MSBuild Projects="TestesDLLs.dproj" Targets="Clean"/>
+    <Target Name="AtWS_Demo:Clean">
+        <MSBuild Projects="demo\AtWS_Demo.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="TestesDLLs:Make">
-        <MSBuild Projects="TestesDLLs.dproj" Targets="Make"/>
+    <Target Name="AtWS_Demo:Make">
+        <MSBuild Projects="demo\AtWS_Demo.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ATWSDocTransp">
-        <MSBuild Projects="ATWSDocTransp.dproj"/>
+    <Target Name="AtWS">
+        <MSBuild Projects="src\AtWS.dproj"/>
     </Target>
-    <Target Name="ATWSDocTransp:Clean">
-        <MSBuild Projects="ATWSDocTransp.dproj" Targets="Clean"/>
+    <Target Name="AtWS:Clean">
+        <MSBuild Projects="src\AtWS.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="ATWSDocTransp:Make">
-        <MSBuild Projects="ATWSDocTransp.dproj" Targets="Make"/>
+    <Target Name="AtWS:Make">
+        <MSBuild Projects="src\AtWS.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="TestesDLLs;ATWSDocTransp"/>
+        <CallTarget Targets="AtWS_Demo;AtWS"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TestesDLLs:Clean;ATWSDocTransp:Clean"/>
+        <CallTarget Targets="AtWS_Demo:Clean;AtWS:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TestesDLLs:Make;ATWSDocTransp:Make"/>
+        <CallTarget Targets="AtWS_Demo:Make;AtWS:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
