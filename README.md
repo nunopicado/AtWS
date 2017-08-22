@@ -13,7 +13,7 @@ A CapiCOM deixou de ser necessária a partir da versão v2017.08.22
 
 ~~Requer que o certificado esteja instalado no Windows~~
 
-Não é necessário instalar o certificado no Windowsa partir da versão v2013.12.11
+Não é necessário instalar o certificado no Windows a partir da versão v2013.12.11
 
 ### ATENÇÃO: ###
 
