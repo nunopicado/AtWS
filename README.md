@@ -21,24 +21,24 @@ Esta é uma DLL de testes para fins meramente didáticos. Não foi alvo de teste
 
 ### Funções: ###
 #### ~~ValidadePFX (PFXFile, PFXPass: WideString): WideString;~~
-~~* Retorna a data de expiração do certificado.
-* Aceita por parâmetro duas strings, em formato UniCode, e retorna uma no mesmo formato.
-* O primeiro parâmetro é o caminho completo para o ficheiro do certificado (Extensão PFX), o segundo leva a password do certificado.
-* A Naming Convention é StdCall, standard do Windows.~~
+* ~~Retorna a data de expiração do certificado.~~
+* ~~Aceita por parâmetro duas strings, em formato UniCode, e retorna uma no mesmo formato.~~
+* ~~O primeiro parâmetro é o caminho completo para o ficheiro do certificado (Extensão PFX), o segundo leva a password do certificado.~~
+* ~~A Naming Convention é StdCall, standard do Windows.~~
 
 #### ~~InitWS(SoapURL, SoapAction: WideString; TimeOut: Integer);~~
-~~* Inicializa a DLL. Deve ser chamada antes de qualquer envio de documentos (não precisa ser chamada se for apenas para verificar a validade).
-* Aceita por parâmetro duas strings, em formato UniCode, e um valor inteiro.
-* O primeiro parâmetro é o URL do serviço AT, o segundo é a SOAP Action a usar, o terceiro é o número de segundos para o Timeout. Normalmente, 10 segundos é suficiente. Em máquinas lentas/net lenta, subir um pouco pode ser necessário.
-* A Naming Convention é StdCall, standard do Windows.~~
+* ~~Inicializa a DLL. Deve ser chamada antes de qualquer envio de documentos (não precisa ser chamada se for apenas para verificar a validade).~~
+* ~~Aceita por parâmetro duas strings, em formato UniCode, e um valor inteiro.~~
+* ~~O primeiro parâmetro é o URL do serviço AT, o segundo é a SOAP Action a usar, o terceiro é o número de segundos para o Timeout. Normalmente, 10 segundos é suficiente. Em máquinas lentas/net lenta, subir um pouco pode ser necessário.~~
+* ~~A Naming Convention é StdCall, standard do Windows.~~
 
 #### ~~ValidaTDoc(XMLData, PFXFile, PFXPass: WideString): WideString;~~
-~~* Envia um documento de transporte para a AT.
-* Aceita por parâmetro três strings, em formato UniCode.
-* O primeiro parâmetro é o documento a enviar, em formato XML, de acordo com as indicações da AT. As excepções são os campos Password (que deve ir em texto simples, e não encriptado), e os campos Nonce e Created, que devem ir vazios. A DLL encarrega-se de encriptar a password e criar os campos Nonce e Created.
-* Os segundo e terceiro parâmetros são os dados do certificado (caminho completo e password).
-* Retorna uma string, UniCode também, com o XML de resposta da AT, ou uma string vazia caso não haja resposta.
-* A Naming Convention é StdCall, standard do Windows.~~
+* ~~Envia um documento de transporte para a AT.~~
+* ~~Aceita por parâmetro três strings, em formato UniCode.~~
+* ~~O primeiro parâmetro é o documento a enviar, em formato XML, de acordo com as indicações da AT. As excepções são os campos Password (que deve ir em texto simples, e não encriptado), e os campos Nonce e Created, que devem ir vazios. A DLL encarrega-se de encriptar a password e criar os campos Nonce e Created.~~
+* ~~Os segundo e terceiro parâmetros são os dados do certificado (caminho completo e password).~~
+* ~~Retorna uma string, UniCode também, com o XML de resposta da AT, ou uma string vazia caso não haja resposta.~~
+* ~~A Naming Convention é StdCall, standard do Windows.~~
 
 #### function ATWebService(const SoapURL, SoapAction, PubKeyFile, PFXFile, PFXPass: WideString): IAtWSvc; 
 * Cria um objecto de envio de documentos para a AT por webservice
@@ -49,6 +49,7 @@ Esta é uma DLL de testes para fins meramente didáticos. Não foi alvo de teste
 * **PFXFile** é o caminho do ficheiro do certificado PFX a usar
 * **PFXPass** é a password do certificado
 * Retorna um *interface* **IAtWSvc**, cuja declaração pode ser encontrada no ficheiro **AtWSvcIntf.pas**
+* A *Naming Convention* é ***StdCall***, standard do Windows.
 
 ### IAtWSvc: ###
 
