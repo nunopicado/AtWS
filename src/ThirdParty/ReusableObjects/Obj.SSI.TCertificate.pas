@@ -1,3 +1,26 @@
+(******************************************************************************)
+(** Suite         : Reusable Objects                                         **)
+(** Object        : TCertificate                                             **)
+(** Framework     :                                                          **)
+(** Developed by  : Nuno Picado, WinCrypt items merged from ACBr_WinCrypt.pas**)
+(******************************************************************************)
+(** Interfaces    : ICertificate                                             **)
+(******************************************************************************)
+(** Dependencies  :                                                          **)
+(******************************************************************************)
+(** Description   : Handles PFX certificate files                            **)
+(******************************************************************************)
+(** Licence       : GNU LGPLv3 (http://www.gnu.org/licenses/lgpl-3.0.html)   **)
+(** Contributions : You can create pull request for all your desired         **)
+(**                 contributions as long as they comply with the guidelines **)
+(**                 you can find in the readme.md file in the main directory **)
+(**                 of the Reusable Objects repository                       **)
+(** Disclaimer    : The licence agreement applies to the code in this unit   **)
+(**                 and not to any of its dependencies, which have their own **)
+(**                 licence agreement and to which you must comply in their  **)
+(**	                terms                                                    **)
+(******************************************************************************)
+
 unit Obj.SSI.TCertificate;
 
 interface
@@ -161,7 +184,6 @@ implementation
 
 uses
     Obj.SSI.TValue
-  , Spring
   , SysUtils
   ;
 
@@ -241,13 +263,13 @@ end;
 
 constructor TCertificate.Create(const PFXFile, PFXPass: string);
 begin
-  Guard.CheckTrue(
-    FileExists(PFXFile),
-    Format(
-      'Certificado %s não pode ser lido.',
-      [ExtractFileName(PFXFile)]
-    )
-  );
+  if not FileExists(PFXFile)
+    then raise Exception.Create(
+      Format(
+        'Certificate file could not be read: %s',
+        [ExtractFileName(PFXFile)]
+      )
+    );
   FPFXFile := PFXFile;
   FPFXPass := PFXPass;
   FPFXData := TValue<AnsiString>.New(GetPFXData);
@@ -267,17 +289,13 @@ begin
   // Certificate file validation
   PFXBlob.CbData := Length(FPFXData.Value);
   PFXBlob.PbData := PByte(FPFXData.Value);
-  Guard.CheckTrue(
-    PFXIsPFXBlob(PFXBlob),
-    'Invalid certificate data.'
-  );
+  if not PFXIsPFXBlob(PFXBlob)
+    then raise Exception.Create('Invalid certificate data.');
 
   // Password validation
   WSPass := WideString(FPFXPass);
-  Guard.CheckTrue(
-    PFXVerifyPassword(PFXBlob, LPCWSTR(WsPass), 0),
-    'Invalid certificate password.'
-  );
+  if not PFXVerifyPassword(PFXBlob, LPCWSTR(WsPass), 0)
+    then raise Exception.Create('Invalid certificate password.');
 
   // Certificate store validation
   CertStore := PFXImportCertStore(
@@ -287,10 +305,8 @@ begin
     { PKCS12_PREFER_CNG_KSP or }
     PKCS12_INCLUDE_EXTENDED_PROPERTIES
   );
-  Guard.CheckNotNull(
-    CertStore,
-    'Could not access certificate store.'
-  );
+  if not Assigned(CertStore)
+    then raise Exception.Create('Could not access certificate store.');
 
   // Find certificate in certificate chain
   Result  := nil;
@@ -327,10 +343,8 @@ begin
           PFXCert^
         );
     end;
-  Guard.CheckNotNull(
-    Result,
-    'Could not find a client certificate with a private key.'
-  );
+  if not Assigned(Result)
+    then raise Exception.Create('Could not find a client certificate with a private key.');
 end;
 
 function TCertificate.GetPFXData: AnsiString;
