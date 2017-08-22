@@ -14,6 +14,8 @@ uses
   dorOpenSSLCipher,
   XMLDoc,
   xmlintf,
+  ActiveX,
+  Dialogs,
   CAPICOM_TLB in 'CAPICOM_TLB.pas',
   libeay32 in 'libeay32.pas',
   superobject in 'superobject.pas',
@@ -54,32 +56,13 @@ begin
      Result:=WideString(cSoapUrl);
 end;
 
-function CertThumbPrint(CertFileName,Password:String):String;
-var
-   KeyStorage   : Capicom_Key_Storage_Flag;
-   KeyLocation  : Capicom_Key_Location;
-   Certificate  : TCertificate;
-begin
-     try
-        Certificate:=TCertificate.Create(nil);
-        try
-           Certificate.Load(CertFileName,Password,KeyStorage,KeyLocation);
-           Certificate.Connect;
-           Result:=UpperCase(Certificate.Thumbprint);
-        finally
-           Certificate.Free;
-        end;
-     except
-        raise Exception.Create('CertThumbPrint');
-     end;
-end;
-
 function GenerateRandomKey: String;
 var
    s1, s2, s3, s4, s5, s6, Key: String;
    i, v: NativeInt;
 begin
      try
+        Randomize;
         s1 := ''; s2 := ''; s3 := ''; s4 := ''; s5 := ''; s6 := '';
         for i := 1 to 16 do
             begin
@@ -98,7 +81,8 @@ begin
             end;
         Result := Key;
      except
-        raise Exception.Create('GenerateRandomKey');
+        ON E:Exception DO
+           ShowMessage(E.Message);
      end;
 end;
 
@@ -116,7 +100,8 @@ begin
         Result := String(sOut);
         Cipher.Free;
      except
-        raise Exception.Create('AESEncString');
+        ON E:Exception DO
+           ShowMessage(E.Message);
      end;
 end;
 
@@ -132,7 +117,8 @@ begin
         Result := PEM_read_bio_PUBKEY(KeyFile, K, Nil, Nil);
         BIO_free(KeyFile);
      except
-        raise Exception.Create('ReadPublicKey');
+        ON E:Exception DO
+           ShowMessage(E.Message);
      end;
 end;
 
@@ -205,58 +191,41 @@ begin
                 end
            else Result := 'Erro';
      except
-        raise Exception.Create('RSASignString');
+        ON E:Exception DO
+           ShowMessage(E.Message);
      end;
 end;
 
 procedure THTTPEvents.HTTPReqResp1BeforePost(const HTTPReqResp: THTTPReqResp; Data: Pointer);
 var
    Store        : IStore;
-   Certs        : ICertificates2;
    Cert         : ICertificate2;
    CertContext  : ICertContext;
    PCertContext : PCCERT_CONTEXT;
-   V            : OleVariant;
 begin
      try
+        if not FileExists(HTTPEvents.PFXFile)
+           then Raise Exception.Create('Ficheiro de certificado não encontrado!');
+
         HttpReqResp.ConnectTimeout:=12000;
         HttpReqResp.ReceiveTimeout:=12000;
         HttpReqResp.SendTimeout:=12000;
 
         // create Certificate store object
         Store:=CoStore.Create;
+        Cert := CoCertificate.Create;
+        Cert.Load(HTTPEvents.PFXFile,HTTPEvents.PFXPass,CAPICOM_KEY_STORAGE_DEFAULT,CAPICOM_CURRENT_USER_KEY);
 
-        // open the My Store containing certs with private keys
-        Store.Open(CAPICOM_CURRENT_USER_STORE,'MY',CAPICOM_STORE_OPEN_MAXIMUM_ALLOWED);
+        CertContext:=Cert as ICertContext;
+        CertContext.Get_CertContext(Integer(PCertContext));
 
-        // thumbprint of the certificate to use. Look at CAPICOM docs to see how to find certs using other Id's
-        // find the certificate with the given thumbprint
-        V:=CertThumbPrint(HTTPEvents.PFXFile,HTTPEvents.PFXPass);
-
-        Certs := Store.Certificates as ICertificates2;
-        try
-           Certs := Certs.Find(CAPICOM_CERTIFICATE_FIND_SHA1_HASH, V, False);
-        except
-           Raise Exception.Create('Erro ao carregar certificado de autenticação de cliente.');
-        end;
-
-        // any certificates found?
-        if Certs.Count = 1
-           then begin // Encontrou apenas 1, caso contrбrio falhou em Certs.Find e poderб devolver outros que nгo interessam
-                     // get the certificate context
-                     Cert:=IInterface(Certs.Item[1]) as ICertificate2;
-                     Cert.IssuerName;
-                     Cert.SerialNumber;
-                     CertContext:=Cert as ICertContext;
-                     CertContext.Get_CertContext(Integer(PCertContext));
-
-                     // set the certificate to use for the SSL connection
-                     if not InternetSetOption(Data,INTERNET_OPTION_CLIENT_CERT_CONTEXT,PCertContext,Sizeof(CERTCONTEXT)*5)
-                        then Raise Exception.Create('Problema no certificado!');
-                     CertContext.FreeContext( Integer( PCertContext ) );
-                end;
+        // set the certificate to use for the SSL connection
+        if not InternetSetOption(Data,INTERNET_OPTION_CLIENT_CERT_CONTEXT,PCertContext,Sizeof(CERTCONTEXT)*5)
+           then Raise Exception.Create('Problema no certificado!');
+        CertContext.FreeContext( Integer( PCertContext ) );
      except
-        raise Exception.Create('HTTPReqResp1BeforePost');
+        ON E:Exception DO
+           ShowMessage(E.Message);
      end;
 end;
 
@@ -304,7 +273,8 @@ begin
            IdSNTP.Free;
         end;
      except
-        raise Exception.Create('ZNow');
+        ON E:Exception DO
+           ShowMessage(E.Message);
      end;
 end;
 
@@ -331,11 +301,12 @@ begin
                      InternetCloseHandle(hsession);
                 end;
      except
-        raise Exception.Create('CheckUrl');
+        ON E:Exception DO
+           ShowMessage(E.Message);
      end;
 end;
 
-function ValidaTDoc(XMLData,PubKeyFile,PFXFile,PFXPass:WideString):WideString; StdCall; Export;
+function _ValidaTDoc(XMLData,PubKeyFile,PFXFile,PFXPass:WideString):WideString; StdCall;
 var
    Stream: TMemoryStream;
    StrStream: TStringStream;
@@ -401,7 +372,21 @@ begin
         end;
         HTTPEvents.Free;
      except
-        raise Exception.Create('ValidaTDoc');
+        ON E:Exception DO
+           ShowMessage(E.Message);
+     end;
+end;
+
+function ValidaTDoc(XMLData,PubKeyFile,PFXFile,PFXPass:WideString):WideString; StdCall; Export;
+begin
+     // Inicializa a aplicação COM
+     CoInitialize(nil); // Devia ser aplicação a fazer mas nao ha garantia que o faça
+     try
+        //O codigo tem de passar para outra função senão ha erros no CoUninitialize
+        result := _ValidaTDoc(XMLData,PubKeyFile,PFXFile,PFXPass);
+     finally
+        // Desinicializa a aplicação COM
+        CoUninitialize;
      end;
 end;
 

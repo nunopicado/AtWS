@@ -33,7 +33,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
      ShowMessage('Servidor de Testes (701)');
      InitWS('https://servicos.portaldasfinancas.gov.pt:701/sgdtws/documentosTransporte','https://servicos.portaldasfinancas.gov.pt/sgdtws/documentosTransporte/');
-     memo1.Text:=FormatXMLData(ValidaTDoc(PChar(memo1.Text),'ChavePublicaAT.pem','TESTESWebServices.pfx','TESTEwebservice'));
+     memo1.Text:=FormatXMLData(ValidaTDoc(PChar(memo1.Text),'ChavePublicaAT.pem','TESTEWebService.pfx','TESTEwebservice'));
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);

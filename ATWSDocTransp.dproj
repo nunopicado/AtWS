@@ -78,7 +78,7 @@
         <Manifest_File>None</Manifest_File>
         <VerInfo_Private>true</VerInfo_Private>
         <VerInfo_Debug>true</VerInfo_Debug>
-        <Debugger_HostApplication>E:\Dropbox\WebServices\WSDllXE3\Win32\Debug\TesteSendEscape.exe</Debugger_HostApplication>
+        <Debugger_HostApplication>E:\Dropbox\Delphi\WebServices\WS-DLL Forum\Win32\Debug\TestesDLLs.exe</Debugger_HostApplication>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.2.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.2.0;Comments=;SpecialBuild=;PrivateBuild=</VerInfo_Keys>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
     </PropertyGroup>
@@ -167,8 +167,3 @@
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
 </Project>
-
-<!-- EurekaLog First Line
-[Exception Log]
-EurekaLog Version=7001
-EurekaLog Last Line -->
