@@ -16,97 +16,37 @@ object fMain: TfMain
     629)
   PixelsPerInch = 96
   TextHeight = 13
-  object Memo1: TMemo
+  object memoRequest: TMemo
     Left = 0
     Top = 0
     Width = 713
     Height = 629
     Align = alLeft
-    Lines.Strings = (
-      '<?xml version="1.0" standalone="no"?>'
-      '<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">'
-      '  <S:Header>'
-      
-        '    <wss:Security xmlns:wss="http://schemas.xmlsoap.org/ws/2002/' +
-        '12/secext">'
-      '      <wss:UsernameToken>'
-      '        <wss:Username>207250618/1</wss:Username>'
-      '        <wss:Nonce></wss:Nonce>'
-      '        <wss:Password>123456789</wss:Password>'
-      '        <wss:Created></wss:Created>'
-      '      </wss:UsernameToken>'
-      '    </wss:Security>'
-      '  </S:Header>'
-      '  <S:Body>'
-      
-        '    <ns2:envioDocumentoTransporteRequestElem xmlns:ns2="https://' +
-        'servicos.portaldasfinancas.gov.pt/sgdtws/documentosTransporte/">'
-      '      <TaxRegistrationNumber>207250618</TaxRegistrationNumber>'
-      '      <CompanyName>Coiso e Tal Lda.</CompanyName>'
-      '      <CompanyAddress>'
-      '        <Addressdetail>L'#225' Mesmo N 6 Lj 3</Addressdetail>'
-      '        <City>Cascos de Rolha</City>'
-      '        <PostalCode>8050-000</PostalCode>'
-      '        <Country>PT</Country>'
-      '      </CompanyAddress>'
-      '      <DocumentNumber>GT 001/528</DocumentNumber>'
-      '      <MovementStatus>N</MovementStatus>'
-      '      <MovementDate>2017-08-16</MovementDate>'
-      '      <MovementType>GT</MovementType>'
-      '      <CustomerTaxID>999999990</CustomerTaxID>'
-      '      <CustomerAddress>'
-      '        <Addressdetail>Curral de Moinas</Addressdetail>'
-      '        <City>Portada</City>'
-      '        <PostalCode>8888-000</PostalCode>'
-      '        <Country>PT</Country>'
-      '      </CustomerAddress>'
-      '      <CustomerName>Ti Manel</CustomerName>'
-      '      <AddressTo>'
-      '        <Addressdetail>Vale da Moita</Addressdetail>'
-      '        <City>Portel</City>'
-      '        <PostalCode>8884-144</PostalCode>'
-      '        <Country>PT</Country>'
-      '      </AddressTo>'
-      '      <AddressFrom>'
-      '        <Addressdetail>Vilar Paraiso</Addressdetail>'
-      '        <City>Terra Dele</City>'
-      '        <PostalCode>9999-144</PostalCode>'
-      '        <Country>PT</Country>'
-      '      </AddressFrom>'
-      '      <MovementStartTime>2017-08-18T14:50:00</MovementStartTime>'
-      '      <VehicleID>AA-00-00</VehicleID>'
-      '      <Line>'
-      '        <ProductDescription>Papel A4</ProductDescription>'
-      '        <Quantity>5</Quantity>'
-      '        <UnitOfMeasure>Un</UnitOfMeasure>'
-      '        <UnitPrice>3.00</UnitPrice>'
-      '      </Line>'
-      '    </ns2:envioDocumentoTransporteRequestElem>'
-      '  </S:Body>'
-      '</S:Envelope>')
     TabOrder = 0
   end
-  object bSetupProductionWS: TButton
-    Left = 736
-    Top = 56
-    Width = 201
+  object bSetupProductionDTWS: TButton
+    Left = 719
+    Top = 55
+    Width = 114
     Height = 42
     Anchors = [akLeft, akTop, akRight]
-    Caption = 'Inicializar Webservice de Produ'#231#227'o'
+    Caption = 'Inicializar Webservice de Produ'#231#227'o DT'
     TabOrder = 1
-    OnClick = bSetupProductionWSClick
+    WordWrap = True
+    OnClick = bSetupProductionDTWSClick
   end
-  object bSetupTestingWS: TButton
-    Left = 736
+  object bSetupTestingDTWS: TButton
+    Left = 719
     Top = 8
-    Width = 201
+    Width = 114
     Height = 42
     Anchors = [akLeft, akTop, akRight]
-    Caption = 'Inicializar Webservice de Testes'
+    Caption = 'Inicializar Webservice de Testes DT'
     TabOrder = 2
-    OnClick = bSetupTestingWSClick
+    WordWrap = True
+    OnClick = bSetupTestingDTWSClick
   end
-  object Memo2: TMemo
+  object memoResponse: TMemo
     Left = 719
     Top = 151
     Width = 236
@@ -115,14 +55,37 @@ object fMain: TfMain
     TabOrder = 3
   end
   object bSendDoc: TButton
-    Left = 736
+    Left = 719
     Top = 103
-    Width = 201
+    Width = 230
     Height = 42
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Enviar documento'
     Enabled = False
     TabOrder = 4
+    WordWrap = True
     OnClick = bSendDocClick
+  end
+  object bSetupTestingFTWS: TButton
+    Left = 833
+    Top = 8
+    Width = 114
+    Height = 42
+    Anchors = [akLeft, akTop, akRight]
+    Caption = 'Inicializar Webservice de Testes FT'
+    TabOrder = 5
+    WordWrap = True
+    OnClick = bSetupTestingFTWSClick
+  end
+  object bSetupProductionFTWS: TButton
+    Left = 835
+    Top = 55
+    Width = 114
+    Height = 42
+    Anchors = [akLeft, akTop, akRight]
+    Caption = 'Inicializar Webservice de Produ'#231#227'o FT'
+    TabOrder = 6
+    WordWrap = True
+    OnClick = bSetupProductionFTWSClick
   end
 end
