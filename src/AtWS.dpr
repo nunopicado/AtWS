@@ -3,15 +3,6 @@
 uses
   AtXMLDocument in 'AtXMLDocument.pas',
   AtWSvc in 'AtWSvc.pas',
-  dorOpenSSLCipher in 'ThirdParty\DelphiOnRails\dorOpenSSLCipher.pas',
-  dorOpenSSL in 'ThirdParty\DelphiOnRails\dorOpenSSL.pas',
-  dorUtils in 'ThirdParty\DelphiOnRails\dorUtils.pas',
-  superobject in 'ThirdParty\SuperObject\superobject.pas',
-  uiblib in 'ThirdParty\UIB\uiblib.pas',
-  uibase in 'ThirdParty\UIB\uibase.pas',
-  uibconst in 'ThirdParty\UIB\uibconst.pas',
-  uiberror in 'ThirdParty\UIB\uiberror.pas',
-  uibkeywords in 'ThirdParty\UIB\uibkeywords.pas',
   TZDB in 'ThirdParty\TZDB\TZDB.pas',
   libeay32 in 'ThirdParty\OpenSSL\libeay32.pas',
   Obj.SSI.IAES128 in 'ThirdParty\ReusableObjects\Obj.SSI.IAES128.pas',
@@ -40,7 +31,8 @@ uses
   Obj.SSI.TZDate in 'ThirdParty\ReusableObjects\Obj.SSI.TZDate.pas',
   AtWSvcIntf in 'AtWSvcIntf.pas',
   Obj.SSI.ICertificate in 'ThirdParty\ReusableObjects\Obj.SSI.ICertificate.pas',
-  Obj.SSI.TCertificate in 'ThirdParty\ReusableObjects\Obj.SSI.TCertificate.pas';
+  Obj.SSI.TCertificate in 'ThirdParty\ReusableObjects\Obj.SSI.TCertificate.pas',
+  LibEay.Ext in 'LibEay.Ext.pas';
 
 {$R *.res}
 

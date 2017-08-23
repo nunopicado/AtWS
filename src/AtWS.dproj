@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>AtWS.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Library</AppType>
@@ -76,7 +76,7 @@
         <Manifest_File>None</Manifest_File>
         <VerInfo_Private>true</VerInfo_Private>
         <VerInfo_Debug>true</VerInfo_Debug>
-        <Debugger_HostApplication>E:\Nuno\Dropbox\Delphi\[Testes]\WebServices\WS-Dll\bin\AtWS_Demo.exe</Debugger_HostApplication>
+        <Debugger_HostApplication>E:\Users\nunopicado\Dropbox\Delphi\AtWS\bin\AtWS_Demo.exe</Debugger_HostApplication>
         <VerInfo_Keys>CompanyName=;FileVersion=1.0.2.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.2.0;Comments=;SpecialBuild=;PrivateBuild=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -91,15 +91,6 @@
         </DelphiCompile>
         <DCCReference Include="AtXMLDocument.pas"/>
         <DCCReference Include="AtWSvc.pas"/>
-        <DCCReference Include="ThirdParty\DelphiOnRails\dorOpenSSLCipher.pas"/>
-        <DCCReference Include="ThirdParty\DelphiOnRails\dorOpenSSL.pas"/>
-        <DCCReference Include="ThirdParty\DelphiOnRails\dorUtils.pas"/>
-        <DCCReference Include="ThirdParty\SuperObject\superobject.pas"/>
-        <DCCReference Include="ThirdParty\UIB\uiblib.pas"/>
-        <DCCReference Include="ThirdParty\UIB\uibase.pas"/>
-        <DCCReference Include="ThirdParty\UIB\uibconst.pas"/>
-        <DCCReference Include="ThirdParty\UIB\uiberror.pas"/>
-        <DCCReference Include="ThirdParty\UIB\uibkeywords.pas"/>
         <DCCReference Include="ThirdParty\TZDB\TZDB.pas"/>
         <DCCReference Include="ThirdParty\OpenSSL\libeay32.pas"/>
         <DCCReference Include="ThirdParty\ReusableObjects\Obj.SSI.IAES128.pas"/>
@@ -129,8 +120,7 @@
         <DCCReference Include="AtWSvcIntf.pas"/>
         <DCCReference Include="ThirdParty\ReusableObjects\Obj.SSI.ICertificate.pas"/>
         <DCCReference Include="ThirdParty\ReusableObjects\Obj.SSI.TCertificate.pas"/>
-        <None Include="ThirdParty\UIB\uib.inc"/>
-        <None Include="ThirdParty\UIB\uibcommon.inc"/>
+        <DCCReference Include="LibEay.Ext.pas"/>
         <None Include="ThirdParty\TZDB\TZDB.inc"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -193,8 +183,13 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
+                <DeployFile LocalName="..\bin\AtWS.dll" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>AtWS.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\bin\AtWS.dll" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="..\bin\AtWS.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
