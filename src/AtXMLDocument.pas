@@ -1,3 +1,27 @@
+(******************************************************************************)
+(** Suite         : AtWS                                                     **)
+(** Object        : TAtXMLDocument                                           **)
+(** Framework     :                                                          **)
+(** Developed by  : Nuno Picado                                              **)
+(******************************************************************************)
+(** Interfaces    :                                                          **)
+(******************************************************************************)
+(** Dependencies  :                                                          **)
+(******************************************************************************)
+(** Description   : Customized version of TXMLDocument, capable of setting   **)
+(**                 up by itself the fields Nonce, Password and Created      **)
+(******************************************************************************)
+(** Licence       : MIT (https://opensource.org/licenses/MIT)                **)
+(** Contributions : You can create pull request for all your desired         **)
+(**                 contributions as long as they comply with the guidelines **)
+(**                 you can find in the readme.md file in the main directory **)
+(**                 of the Reusable Objects repository                       **)
+(** Disclaimer    : The licence agreement applies to the code in this unit   **)
+(**                 and not to any of its dependencies, which have their own **)
+(**                 licence agreement and to which you must comply in their  **)
+(**	                terms                                                    **)
+(******************************************************************************)
+
 unit AtXMLDocument;
 
 interface
