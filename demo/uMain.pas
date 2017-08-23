@@ -109,7 +109,7 @@ const
                 '    <S:Header>'+
                 '      <wss:Security xmlns:wss="http://schemas.xmlsoap.org/ws/2002/12/secext">'+
                 '        <wss:UsernameToken>'+
-                '          <wss:Username>207250618/1</wss:Username>'+
+                '          <wss:Username>555555550/1</wss:Username>'+
                 '          <wss:Nonce></wss:Nonce>'+
                 '          <wss:Password>123456789</wss:Password>'+
                 '          <wss:Created></wss:Created>'+
@@ -118,7 +118,7 @@ const
                 '    </S:Header>'+
                 '    <S:Body>'+
                 '      <ns2:envioDocumentoTransporteRequestElem xmlns:ns2="https://servicos.portaldasfinancas.gov.pt/sgdtws/documentosTransporte/">'+
-                '        <TaxRegistrationNumber>207250618</TaxRegistrationNumber>'+
+                '        <TaxRegistrationNumber>555555550</TaxRegistrationNumber>'+
                 '        <CompanyName>Coiso e Tal Lda.</CompanyName>'+
                 '        <CompanyAddress>'+
                 '          <Addressdetail>Lá Mesmo N 6 Lj 3</Addressdetail>'+

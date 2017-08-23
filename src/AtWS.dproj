@@ -108,9 +108,9 @@
         <VerInfo_MinorVer>8</VerInfo_MinorVer>
         <VerInfo_Release>23</VerInfo_Release>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileVersion=2017.8.23.1;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.8.23;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=2017.8.23.2;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.8.23;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Build>2</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <ItemGroup>
