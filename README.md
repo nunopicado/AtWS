@@ -5,6 +5,14 @@
 DLL com as funções de encriptação e envio por webservices de documentos de transporte para o servidor da AT
 Programa demonstração de como usar a DLL
 
+
+### Change Log: ###
+
+v2017.8.23: Actualização de alguns Reusable Objects, efectivamente removemendo dependências nos seguintes módulos: **DelphiOnRails**, **SuperObject** e **UIB**
+v2017.08.22: Remoção da dependência da CapiCOM, remoção da dependência da chave pública ChavePublicaAT.pem
+v2013.12.11: Remoção da necessidade de ter o certificado instalado no Windows
+
+
 ### NOTAS: ###
 
 ~~Requer instalação da biblioteca da Microsoft CAPICOM 2.0 (http://www.microsoft.com/pt-pt/download/details.aspx?id=25281)~~
