@@ -198,8 +198,8 @@ begin
     'https://servicos.portaldasfinancas.gov.pt:400/fews/faturas',
     'http://servicos.portaldasfinancas.gov.pt/faturas/RegisterInvoice',
     'ChavePublicaAT.pem',
-    '555555550.pfx',
-    'XPTO'
+    ParamStr(1),
+    ParamStr(2)
   );
   bSendDoc.Caption := 'Enviar documento FT de Produção';
   bSendDoc.Enabled := True;
@@ -223,8 +223,8 @@ begin
     'https://servicos.portaldasfinancas.gov.pt:401/sgdtws/documentosTransporte',
     'https://servicos.portaldasfinancas.gov.pt/sgdtws/documentosTransporte/',
     'ChavePublicaAT.pem',
-    '555555550.pfx',
-    'XPTO'
+    ParamStr(1),
+    ParamStr(2)
   );
   bSendDoc.Caption := 'Enviar documento DT de Produção';
   bSendDoc.Enabled := True;
