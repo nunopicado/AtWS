@@ -67,7 +67,7 @@ object fMain: TfMain
     OnClick = bSendDocClick
   end
   object bSetupTestingFTWS: TButton
-    Left = 833
+    Left = 835
     Top = 8
     Width = 114
     Height = 42
