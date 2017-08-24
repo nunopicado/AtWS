@@ -2,10 +2,10 @@
 
 
 ### Sobre Este Ficheiro ###
-DLL com as funções de encriptação e envio por webservices de documentos de transporte para o servidor da AT
+DLL com as funções de encriptação e envio por webservices de documentos de transporte e documentos de faturação para o servidor da AT
 Programa demonstração de como usar a DLL
 
-#### Testado com o serviço de envio de documentos de transporte, mas é possível que funcione também com outros webservices da Autoridade Tributária
+#### Testado com o serviço de envio de documentos de transporte e com o serviço de envio de faturas, mas é possível que funcione também com outros webservices da Autoridade Tributária
 
 
 ### Change Log: ###
