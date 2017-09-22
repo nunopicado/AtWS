@@ -28,6 +28,12 @@ A CapiCOM deixou de ser necessária a partir da versão v2017.08.22
 
 Não é necessário instalar o certificado no Windows a partir da versão v2013.12.11
 
+
+### QUESTÕES CONHECIDAS: ###
+
+Embora este projecto dispense que o certificado esteja instalado na máquina cliente, o certificado de raíz DGITA Issuing CA (DGITA Root CA) precisa estar instalado (ver Issue #2).
+
+
 ### ATENÇÃO: ###
 
 Esta é uma DLL de testes para fins meramente didáticos. Não foi alvo de testes intensivos que seriam necessários para ambiente de produção. Usem por vosso risco.
