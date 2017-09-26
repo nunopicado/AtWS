@@ -306,7 +306,7 @@ begin
     PKCS12_INCLUDE_EXTENDED_PROPERTIES
   );
   if not Assigned(CertStore)
-    then raise Exception.Create('Could not access certificate store.');
+    then raise Exception.Create('Could not access certificate store: ' + IntToHex(GetLastError, 8));
 
   // Find certificate in certificate chain
   Result  := nil;
