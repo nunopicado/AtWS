@@ -43,6 +43,13 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>2070</VerInfo_Locale>
+        <VerInfo_Release>27</VerInfo_Release>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Keys>FileVersion=2017.10.27.0;ProductVersion=2017.10.27</VerInfo_Keys>
+        <VerInfo_MajorVer>2017</VerInfo_MajorVer>
+        <VerInfo_MinorVer>10</VerInfo_MinorVer>
         <SanitizedProjectName>AtWS_Demo</SanitizedProjectName>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
@@ -58,13 +65,7 @@
         <DCC_DcpOutput>..\bin\dcu\</DCC_DcpOutput>
         <DCC_DcuOutput>..\bin\dcu\</DCC_DcuOutput>
         <DCC_BplOutput>..\bin\</DCC_BplOutput>
-        <VerInfo_Release>23</VerInfo_Release>
-        <VerInfo_MajorVer>2017</VerInfo_MajorVer>
-        <VerInfo_MinorVer>8</VerInfo_MinorVer>
         <Manifest_File>None</Manifest_File>
-        <VerInfo_Keys>FileVersion=2017.8.23.0</VerInfo_Keys>
-        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Locale>2070</VerInfo_Locale>
         <DCC_ExeOutput>..\bin\</DCC_ExeOutput>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
@@ -81,7 +82,6 @@
         <DCC_BplOutput>..\bin\</DCC_BplOutput>
         <DCC_ExeOutput>..\bin\</DCC_ExeOutput>
         <DCC_DcpOutput>..\bin\dcu\</DCC_DcpOutput>
-        <VerInfo_Locale>2070</VerInfo_Locale>
         <DCC_DcuOutput>..\bin\dcu\</DCC_DcuOutput>
         <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
@@ -92,7 +92,8 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Locale>2070</VerInfo_Locale>
+        <VerInfo_Build>8</VerInfo_Build>
+        <VerInfo_Keys>FileVersion=2017.10.27.8;ProductVersion=2017.10.27</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -166,9 +167,9 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="2">
-                <DeployFile LocalName="Win32\Debug\AtWS_Demo.rsm" Configuration="Debug" Class="DebugSymbols"/>
-                <DeployFile LocalName="..\bin\AtWS_Demo.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="Win32\Debug\AtWS_Demo.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="..\bin\AtWS_Demo.rsm" Configuration="Debug" Class="DebugSymbols"/>
+                <DeployFile LocalName="Win32\Debug\AtWS_Demo.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="..\bin\AtWS_Demo.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">

@@ -41,6 +41,13 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Locale>2070</VerInfo_Locale>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Release>27</VerInfo_Release>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_MinorVer>10</VerInfo_MinorVer>
+        <VerInfo_MajorVer>2017</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=;FileVersion=2017.10.27.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.10.27;Comments=;SpecialBuild=;PrivateBuild=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <SanitizedProjectName>AtWS</SanitizedProjectName>
         <GenDll>true</GenDll>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
@@ -55,18 +62,12 @@
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <Manifest_File>None</Manifest_File>
         <DCC_DcpOutput>..\bin\dcu\</DCC_DcpOutput>
-        <VerInfo_MinorVer>8</VerInfo_MinorVer>
-        <VerInfo_Release>23</VerInfo_Release>
-        <VerInfo_MajorVer>2017</VerInfo_MajorVer>
         <DCC_DcuOutput>..\bin\dcu\</DCC_DcuOutput>
-        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <DCC_ExeOutput>..\bin\</DCC_ExeOutput>
         <DCC_BplOutput>..\bin\</DCC_BplOutput>
         <DCC_UsePackage>cxPivotGridChartRS17;JvGlobus;dxSkinSevenRS17;dxSkinBlueprintRS17;dxSkinHighContrastRS17;JvManagedThreads;JvMM;tmsexdxe3;CurrEdit;dxSkinOffice2007BlackRS17;dxCoreRS17;cxPageControldxBarPopupMenuRS17;dxSkinXmas2008BlueRS17;dxPSDBTeeChartRS17;PJwaWindows;rbADO1417;JvCrypt;dxPSTeeChartRS17;dxSkinSummer2008RS17;dxPScxSchedulerLnkRS17;dxSkinBlueRS17;dxSkinDarkRoomRS17;DBXInterBaseDriver;DataSnapServer;DataSnapCommon;dxPScxTLLnkRS17;JvNet;JvDotNetCtrls;dxRibbonRS17;DbxCommonDriver;cxDataRS17;vclimg;dxSkinsdxBarPainterRS17;dxPSdxDBTVLnkRS17;dbxcds;dxSkinMoneyTwinsRS17;JvXPCtrls;vcldb;cxExportRS17;dxPSCoreRS17;dxBarExtItemsRS17;dxGDIPlusRS17;dxNavBarRS17;CustomIPTransport;cxLibraryRS17;cxGridRS17;dxSkinOffice2010BlackRS17;dsnap;IndyIPServer;IndyCore;dxSkinMcSkinRS17;dxPScxCommonRS17;CloudService;FmxTeeUI;dxSkinsdxDLPainterRS17;dxSkiniMaginaryRS17;rbRAP1417;JvDB;JvRuntimeDesign;JediApi_SingleUnits;dxPScxVGridLnkRS17;JclDeveloperTools;dxSkinSevenClassicRS17;dxPScxExtCommonRS17;rbUSER1417;dxPScxSSLnkRS17;dxSkinLilianRS17;dxPSdxLCLnkRS17;dxSkinOffice2010BlueRS17;bindcompfmx;dxSkinOffice2010SilverRS17;vcldbx;cxSchedulerGridRS17;dbrtl;bindcomp;inetdb;JvPluginSystem;dxBarRS17;dclRBE1417;DBXOdbcDriver;dxBarDBNavRS17;JvCmp;dxSkinWhiteprintRS17;JvTimeFramework;xmlrtl;dxSkinsdxRibbonPainterRS17;rbIDE1417;rbDB1417;ibxpress;tmsdxe3;dxDockingRS17;vclactnband;bindengine;soaprtl;FMXTee;dxADOServerModeRS17;dxBarExtDBItemsRS17;dxPSPrVwRibbonRS17;dxSkinOffice2007PinkRS17;rbDIDE1417;vclie;Jcl;bindcompvcl;cxPageControlRS17;rbTCUI1417;dxSkinscxPCPainterRS17;dxmdsRS17;dxSkinTheAsphaltWorldRS17;DBXInformixDriver;dxPsPrVwAdvRS17;dxSkinSilverRS17;dxdborRS17;dsnapcon;DBXFirebirdDriver;inet;JvPascalInterpreter;vclx;dxSkinStardustRS17;cxEditorsRS17;DBXSybaseASADriver;rbRIDE1417;tmsxlsdxe3;dbexpress;EurekaLogCore;IndyIPClient;JvBDE;cxTreeListdxBarPopupMenuRS17;dxSkinVS2010RS17;rbRCL1417;ZComponent;dxThemeRS17;DBXSqliteDriver;dxPScxGridLnkRS17;fmx;JvDlgs;IndySystem;TeeDB;dxSkinValentineRS17;inetdbbde;vclib;DataSnapClient;dxSkinDevExpressStyleRS17;DataSnapProviderClient;DBXSybaseASEDriver;cxBarEditItemRS17;dxServerModeRS17;cxPivotGridOLAPRS17;cxSchedulerRS17;MetropolisUILiveTile;dxSkinPumpkinRS17;dxPSLnksRS17;dxPSdxDBOCLnkRS17;cxVerticalGridRS17;rbTC1417;dxSkinSpringTimeRS17;vcldsnap;dxSkinDevExpressDarkStyleRS17;DBXDb2Driver;rbCIDE1417;DBXOracleDriver;dxSkinLiquidSkyRS17;JvCore;vclribbon;cxSpreadSheetRS17;fmxase;vcl;dxSkinOffice2007SilverRS17;IndyIPCommon;DBXMSSQLDriver;dxPSdxOCLnkRS17;dcldxSkinsCoreRS17;tmswizdxe3;JvAppFrm;inetdbxpress;webdsnap;rbBDE1417;dxSkinCoffeeRS17;JvDocking;adortl;dxSkinscxSchedulerPainterRS17;Capicom;JvWizards;JvHMI;dxtrmdRS17;dxPScxPCProdRS17;JvBands;ZDbc;rtl;DbxClientDriver;rbDBDE1417;ZPlain;dxTabbedMDIRS17;dxComnRS17;dxSkinSharpPlusRS17;dxSkinsCoreRS17;dxSkinLondonLiquidSkyRS17;dxdbtrRS17;Tee;JclContainers;CPortLibDXE;dxSkinBlackRS17;dxorgcRS17;JvSystem;svnui;JvControls;IndyProtocols;DBXMySQLDriver;dxLayoutControlRS17;TeeUI;bindcompdbx;JvJans;JvPrintPreview;JvPageComps;JvStdCtrls;dxSkinOffice2007BlueRS17;JvCustom;dxPScxPivotGridLnkRS17;dxSpellCheckerRS17;ZCore;vcltouch;dxSkinOffice2007GreenRS17;dxSkinSharpRS17;websnap;dclRBBDE1417;dxSkinFoggyRS17;dxTileControlRS17;rbDAD1417;VclSmp;dxSkinDarkSideRS17;cxPivotGridRS17;DataSnapConnectors;fmxobj;cxTreeListRS17;dxSkinGlassOceansRS17;dxPSdxFCLnkRS17;JclVcl;ZParseSql;rbUSERDesign1417;dclRBADO1417;dxFlowChartRS17;svn;fmxdae;dxSkinsdxNavBarPainterRS17;bdertl;dxDBXServerModeRS17;DataSnapIndy10ServerTransport;dxSkinCaramelRS17;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileVersion=2017.8.23.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.8.23;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileVersion=2017.10.27.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.10.27;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -77,24 +78,17 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <VerInfo_MinorVer>8</VerInfo_MinorVer>
-        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_MajorVer>2017</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=;FileVersion=2017.10.27.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.10.27;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <DCC_DcpOutput>..\bin\dcu\</DCC_DcpOutput>
         <DCC_DcuOutput>..\bin\dcu\</DCC_DcuOutput>
         <DCC_BplOutput>..\bin\</DCC_BplOutput>
         <DCC_ExeOutput>..\bin\</DCC_ExeOutput>
         <DCC_RunTimeTypeInfo>true</DCC_RunTimeTypeInfo>
         <VerInfo_PreRelease>true</VerInfo_PreRelease>
-        <VerInfo_Release>23</VerInfo_Release>
         <VerInfo_DLL>true</VerInfo_DLL>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>2070</VerInfo_Locale>
         <VerInfo_Special>true</VerInfo_Special>
         <VerInfo_Private>true</VerInfo_Private>
         <VerInfo_Debug>true</VerInfo_Debug>
-        <Debugger_HostApplication>E:\Users\nunopicado\Dropbox\Delphi\AtWS\bin\AtWS_Demo.exe</Debugger_HostApplication>
-        <VerInfo_Keys>CompanyName=;FileVersion=2017.8.23.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.8.23;Comments=;SpecialBuild=;PrivateBuild=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -103,15 +97,8 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <Debugger_HostApplication>E:\Nuno\Dropbox\Delphi\AtWS\bin\AtWS_Demo.exe</Debugger_HostApplication>
-        <VerInfo_MajorVer>2017</VerInfo_MajorVer>
-        <VerInfo_MinorVer>8</VerInfo_MinorVer>
-        <VerInfo_Release>23</VerInfo_Release>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileVersion=2017.8.23.2;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.8.23;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
-        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Build>2</VerInfo_Build>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileVersion=2017.10.27.5;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.10.27;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Build>5</VerInfo_Build>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -212,6 +199,12 @@
             </Delphi.Personality>
             <Deployment Version="2">
                 <DeployFile LocalName="..\bin\AtWS.dll" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>AtWS.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\bin\AtWS.dll" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>AtWS.dll</RemoteName>
                         <Overwrite>true</Overwrite>

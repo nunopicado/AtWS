@@ -1,4 +1,4 @@
-(******************************************************************************)
+Ôªø(******************************************************************************)
 (** Suite         : AtWS                                                     **)
 (** Object        : TAtWSvc                                                  **)
 (** Framework     :                                                          **)
@@ -35,15 +35,15 @@ type
   TAtWSvc = class(TInterfacedObject, IAtWSvc)
   private const
     cATUrl = 'https://faturas.portaldasfinancas.gov.pt/';
-    // ChavePublicaAT.pem, convertido do ChavePublicAT.cer via OpenSSL
+    // ChaveCifraPublicaAT2020.pem, convertido do ChaveCifraPublicAT2020.cer via OpenSSL, v√°lida at√© 2020-07-23
     cATPublicKey = '-----BEGIN PUBLIC KEY-----'#10 +
-      'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoQi+XDM9OJ+Kr+Blaxn3'#10 +
-      'MFBE7UMYL7bfPGCxS0JDIbYlfQp65mYfzRcIhwysheO9nn7SlpF1b6TNNZglf3BT'#10 +
-      'SpFWP4xwB+RpjmHj1ClLg+hO1E/+olLfbIUplFqATpTWP7TGsgGBOhenQedzasq6'#10 +
-      'qzEoEAiOx4x2kD0NLPGUzMZaUr8HTGriYePWC4SJgwFSGQ9V5Yf4g2zYVh0Kyr2V'#10 +
-      'hJi9mJsGi3mBrgpxueabxEXnDdrDR1PiPhEPIU/w+63jZzcV/cvaKTSyvPtebPSy'#10 +
-      '+AdMtR5r2HXtDoZUKLHfcWZ2LP794wM5WU7ZoIuAQGGKZZyULqneGzCNdvmMuWu8'#10 +
-      '5wIDAQAB'#10 + '-----END PUBLIC KEY-----';
+      'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArBZr7ZqFlHJ8PtTJpXjT'#10 +
+      'm7uilDw2dBIbhClYUh1HXMY72N6Kt4/Es+ZV12kERfjzI4FyqRb7Rpb7nD0gHDQf'#10 +
+      'dwjs3DBZIUKM5TwH/eASUMCu/hl9RfzRvOtXEq2CfSA4dHv/MH+QJg6vbVO0+lHl'#10 +
+      'u1jzybe7fFSxkHWtrfdpsacJRP+tRz9qQ2GS8Pbr7H51NdGHUAsm1A74DYJUyc3N'#10 +
+      '4tMd4v1H2YVAsDqnmRqFFasMvyb5tzjwttAlBXeccb6PhFG6Px/NTjYUt87wQywo'#10 +
+      'Gh2hqOG5Hwyx7RSidFKvXCQQnVAVxAwBhqgggqGf3eAujtTZMe+pdJPtM8x+P+vr'#10 +
+      'FwIDAQAB'#10 + '-----END PUBLIC KEY-----';
   private var
     FPubKeyFile : string;
     FPFXFile    : string;
@@ -105,15 +105,15 @@ begin
            )
       then raise Exception.Create(
              'Problema no certificado:' + #10 +
-             'N∫ sÈrie: ' + SerialNumber + #10 +
-             'Valido atÈ: ' + FormatDateTime('yyyy-mm-dd', NotAfter)
+             'N¬∫ s√©rie: ' + SerialNumber + #10 +
+             'Valido at√©: ' + FormatDateTime('yyyy-mm-dd', NotAfter)
            );
 end;
 
 function TAtWSvc.Send(const XMLData: WideString): WideString;
 begin
   if not TURL.New(cATUrl).IsValid then
-    raise Exception.Create('O servidor da AT n„o est· a responder.');
+    raise Exception.Create('O servidor da AT n√£o est√° a responder.');
 
   Result := WideString(
     TSoapRequest.New(
