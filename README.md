@@ -10,6 +10,8 @@ Programa demonstração de como usar a DLL
 
 ### Change Log: ###
 
+**v2017.10.27**: Actualização da Chave Pública da AT (ChavePublicaAT.pem --> ChaveCifraPublicaAT2020.pem)
+
 **v2017.8.23**: Actualização de alguns **Reusable Objects**, efectivamente removemendo dependências nos seguintes módulos: **DelphiOnRails**, **SuperObject** e **UIB**
 
 **v2017.08.22**: Remoção da dependência da **CapiCOM**, remoção da dependência da chave pública **ChavePublicaAT.pem**
