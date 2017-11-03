@@ -1,0 +1,3 @@
+[submodule "src/ThirdParty/ReusableObjects"]
+	path = src/ThirdParty/ReusableObjects
+	url = https://github.com/nunopicado/Reusable-Objects/
