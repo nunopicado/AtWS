@@ -64,14 +64,7 @@ implementation
 
 uses
     WinINet
-  , Obj.SSI.TCertificate
   , SysUtils
-  , Obj.SSI.TURL
-  , Obj.SSI.TFile
-  , Obj.SSI.TIf
-  , Obj.SSI.TSoapRequest
-  , Obj.SSI.IValue
-  , Obj.SSI.TValue
   , AtXMLDocument
   ;
 
