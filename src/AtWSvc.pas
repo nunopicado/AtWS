@@ -66,6 +66,13 @@ uses
     WinINet
   , SysUtils
   , AtXMLDocument
+  , RO.TCertificate
+  , RO.TURL
+  , RO.TSoapRequest
+  , RO.IValue
+  , RO.TIf
+  , RO.TValue
+  , RO.TFile
   ;
 
 { TAtWSvc }

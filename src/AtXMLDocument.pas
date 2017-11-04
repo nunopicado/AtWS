@@ -40,6 +40,14 @@ type
 implementation
 
 uses
+    RO.TAES128
+  , RO.TZDate
+  , RO.ISNTPTime
+  , RO.TSNTPTime
+  , RO.TIf
+  , RO.TValue
+  , RO.TRSASignature
+  , RO.TRandomKey
   , SysUtils
   ;
 
