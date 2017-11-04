@@ -67,3 +67,7 @@ __recovery/
 *.res
 *.skincfg
 Win32
+bin/libeay32.dll
+bin/ssleay32.dll
+
+*.deployproj
