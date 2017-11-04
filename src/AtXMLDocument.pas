@@ -82,26 +82,30 @@ begin
       CurNode := FindNode('Password');
       if Assigned(CurNode) then
         CurNode.Text := TAES128.New(
-          SecretKey,
-          CurNode.Text
-        ).AsString;
+          TString.New(
+            CurNode.Text
+          ),
+          SecretKey
+        ).Value;
 
       // Created
       CurNode := FindNode('Created');
       if Assigned(CurNode) then
         CurNode.Text := TAES128.New(
-          SecretKey,
-          TZDate.New(
-            'Portugal',
-            TSNTPTimePool.New(
-              [
-                'ntp04.oal.ul.pt',
-                'ntp02.oal.ul.pt'
-              ],
-              TSPBehavior.spReturnCurrentDate
-            )
-          ).AsString
-        ).AsString
+          TString.New(
+            TZDate.New(
+              'Portugal',
+              TSNTPTimePool.New(
+                [
+                  'ntp04.oal.ul.pt',
+                  'ntp02.oal.ul.pt'
+                ],
+                TSPBehavior.spReturnCurrentDate
+              )
+            ).AsString
+          ),
+          SecretKey
+        ).Value
     end;
 end;
 
