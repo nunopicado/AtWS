@@ -79,6 +79,8 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Keys>FileVersion=2017.10.27.1;ProductVersion=2017.10.27</VerInfo_Keys>
         <DCC_BplOutput>..\bin\</DCC_BplOutput>
         <DCC_ExeOutput>..\bin\</DCC_ExeOutput>
         <DCC_DcpOutput>..\bin\dcu\</DCC_DcpOutput>
@@ -92,8 +94,8 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>8</VerInfo_Build>
-        <VerInfo_Keys>FileVersion=2017.10.27.8;ProductVersion=2017.10.27</VerInfo_Keys>
+        <VerInfo_Build>12</VerInfo_Build>
+        <VerInfo_Keys>FileVersion=2017.10.27.12;ProductVersion=2017.10.27</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -167,9 +169,9 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="2">
-                <DeployFile LocalName="Win32\Debug\AtWS_Demo.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="..\bin\AtWS_Demo.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="Win32\Debug\AtWS_Demo.rsm" Configuration="Debug" Class="DebugSymbols"/>
+                <DeployFile LocalName="..\bin\AtWS_Demo.rsm" Configuration="Debug" Class="DebugSymbols"/>
+                <DeployFile LocalName="Win32\Debug\AtWS_Demo.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="..\bin\AtWS_Demo.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
