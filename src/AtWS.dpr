@@ -26,7 +26,9 @@ library AtWS;
 uses
   AtXMLDocument in 'AtXMLDocument.pas',
   AtWSvc in 'AtWSvc.pas',
-  AtWSvcIntf in 'AtWSvcIntf.pas';
+  AtWSvcIntf in 'AtWSvcIntf.pas',
+  libeay32 in 'ThirdParty\libeay32\libeay32.pas',
+  TZDB in 'ThirdParty\ReusableObjects\src\ThirdParty\tzdb\src\TZDBPK\TZDB.pas';
 
 {$R *.res}
 

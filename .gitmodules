@@ -1,3 +1,6 @@
 [submodule "src/ThirdParty/ReusableObjects"]
 	path = src/ThirdParty/ReusableObjects
 	url = https://github.com/nunopicado/Reusable-Objects/
+[submodule "src/ThirdParty/libeay32"]
+	path = src/ThirdParty/libeay32
+	url = https://github.com/nunopicado/libeay32
