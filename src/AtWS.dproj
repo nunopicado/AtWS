@@ -97,8 +97,8 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=;FileVersion=2017.10.27.8;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.10.27;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
-        <VerInfo_Build>8</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileVersion=2017.10.27.9;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=2017.10.27;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Build>9</VerInfo_Build>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -107,8 +107,8 @@
         <DCCReference Include="AtXMLDocument.pas"/>
         <DCCReference Include="AtWSvc.pas"/>
         <DCCReference Include="AtWSvcIntf.pas"/>
-        <DCCReference Include="ThirdParty\libeay32\libeay32.pas"/>
         <DCCReference Include="ThirdParty\ReusableObjects\src\ThirdParty\tzdb\src\TZDBPK\TZDB.pas"/>
+        <DCCReference Include="ThirdParty\ReusableObjects\src\ThirdParty\libeay32\libeay32.pas"/>
         <None Include="ThirdParty\ReusableObjects\src\ThirdParty\tzdb\src\TZDBPK\TZDB.inc"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -184,16 +184,7 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\bin\AtWS.dll" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
                 <DeployClass Name="ProjectOSXResource">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\Resources</RemoteDir>
@@ -535,7 +526,16 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
