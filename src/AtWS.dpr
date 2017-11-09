@@ -6,9 +6,9 @@
 (******************************************************************************)
 (** Interfaces    :                                                          **)
 (******************************************************************************)
-(** Dependencies  : OpenSSL, LibEay32, TZDB, Reusable Objects                **)
+(** Dependencies  : Reusable Objects                                         **)
 (******************************************************************************)
-(** Description   : Extends LibEay32 OpenSSL wrapping                        **)
+(** Description   : Facilitates consuming AT webservices                     **)
 (******************************************************************************)
 (** Licence       : MIT (https://opensource.org/licenses/MIT)                **)
 (** Contributions : You can create pull request for all your desired         **)
@@ -26,9 +26,7 @@ library AtWS;
 uses
   AtXMLDocument in 'AtXMLDocument.pas',
   AtWSvc in 'AtWSvc.pas',
-  AtWSvcIntf in 'AtWSvcIntf.pas',
-  TZDB in 'ThirdParty\ReusableObjects\src\ThirdParty\tzdb\src\TZDBPK\TZDB.pas',
-  libeay32 in 'ThirdParty\ReusableObjects\src\ThirdParty\libeay32\libeay32.pas';
+  AtWSvcIntf in 'AtWSvcIntf.pas';
 
 {$R *.res}
 
