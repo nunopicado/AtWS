@@ -123,18 +123,11 @@ begin
     ).Send(
         TAtXMLDocument.New(
           XMLData,
-          TIf<IString>.New(
+          TIf<string>.New(
             FileExists(FPubKeyFile),
-            TString.New(
-              function: string
-              begin
-                Result := TFile.New(FPubKeyFile).AsDataStream.AsString;
-              end
-            ),
-            TString.New(
-              cATPublicKey
-            )
-          ).Eval.Value
+            TFile.New(FPubKeyFile).AsDataStream.AsString,
+            cATPublicKey
+          ).Eval
         ).XML.Text
       )
   );
