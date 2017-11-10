@@ -13,6 +13,8 @@ webservices da Autoridade Tributária
 
 ### Change Log: ###
 
+**v2017.11.10**: Optimizações
+
 **v2017.10.27**: Actualização da Chave Pública da AT 
 (ChavePublicaAT.pem --> ChaveCifraPublicaAT2020.pem)
 
