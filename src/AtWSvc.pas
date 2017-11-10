@@ -50,8 +50,6 @@ type
     FPFXPass    : string;
     FSoapURL    : string;
     FSoapAction : string;
-  private class var
-    FInstance   : IAtWSvc;
   private
     procedure HTTPReqResp1BeforePost(const HTTPReqResp: THTTPReqResp; Data: Pointer);
   public
@@ -69,9 +67,7 @@ uses
   , RO.TCertificate
   , RO.TURL
   , RO.TSoapRequest
-  , RO.IValue
   , RO.TIf
-  , RO.TValue
   , RO.TFile
   ;
 
