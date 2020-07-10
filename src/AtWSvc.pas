@@ -107,9 +107,15 @@ begin
 end;
 
 function TAtWSvc.Send(const XMLData: WideString): WideString;
+var
+  PubKey: string;
 begin
   if not TURL.New(cATUrl).IsValid then
     raise Exception.Create('O servidor da AT não está a responder.');
+
+  if FileExists(FPubKeyFile)
+    then PubKey := TFile.New(FPubKeyFile).AsDataStream.AsString
+    else PubKey := cATPublicKey;
 
   Result := WideString(
     TSoapRequest.New(
@@ -119,11 +125,7 @@ begin
     ).Send(
         TAtXMLDocument.New(
           XMLData,
-          TIf<string>.New(
-            FileExists(FPubKeyFile),
-            TFile.New(FPubKeyFile).AsDataStream.AsString,
-            cATPublicKey
-          ).Eval
+          PubKey
         ).XML.Text
       )
   );
