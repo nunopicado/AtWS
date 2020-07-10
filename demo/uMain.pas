@@ -185,7 +185,7 @@ procedure TfMain.bSetupTestingFTWSClick(Sender: TObject);
 begin
   FAtWS := ATWebService(
     'https://servicos.portaldasfinancas.gov.pt:700/fews/faturas',
-    'http://servicos.portaldasfinancas.gov.pt/faturas/RegisterInvoice',
+    'https://servicos.portaldasfinancas.gov.pt/faturas/RegisterInvoice',
     'ChaveCifraPublicaAT2023.pem',
     'TESTEWebServices.pfx',
     'TESTEwebservice'
@@ -199,7 +199,7 @@ procedure TfMain.bSetupProductionFTWSClick(Sender: TObject);
 begin
   FAtWS := ATWebService(
     'https://servicos.portaldasfinancas.gov.pt:400/fews/faturas',
-    'http://servicos.portaldasfinancas.gov.pt/faturas/RegisterInvoice',
+    'https://servicos.portaldasfinancas.gov.pt/faturas/RegisterInvoice',
     'ChaveCifraPublicaAT2023.pem',
     ParamStr(1),
     ParamStr(2)
