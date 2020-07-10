@@ -35,15 +35,15 @@ type
   TAtWSvc = class(TInterfacedObject, IAtWSvc)
   private const
     cATUrl = 'https://faturas.portaldasfinancas.gov.pt/';
-    // ChaveCifraPublicaAT2020.pem, convertido do ChaveCifraPublicAT2020.cer via OpenSSL, válida até 2020-07-23
+    // ChaveCifraPublicaAT2023.pem, convertido do ChaveCifraPublicAT2023.cer via OpenSSL, válida até 2023-06-23
     cATPublicKey = '-----BEGIN PUBLIC KEY-----'#10 +
-      'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArBZr7ZqFlHJ8PtTJpXjT'#10 +
-      'm7uilDw2dBIbhClYUh1HXMY72N6Kt4/Es+ZV12kERfjzI4FyqRb7Rpb7nD0gHDQf'#10 +
-      'dwjs3DBZIUKM5TwH/eASUMCu/hl9RfzRvOtXEq2CfSA4dHv/MH+QJg6vbVO0+lHl'#10 +
-      'u1jzybe7fFSxkHWtrfdpsacJRP+tRz9qQ2GS8Pbr7H51NdGHUAsm1A74DYJUyc3N'#10 +
-      '4tMd4v1H2YVAsDqnmRqFFasMvyb5tzjwttAlBXeccb6PhFG6Px/NTjYUt87wQywo'#10 +
-      'Gh2hqOG5Hwyx7RSidFKvXCQQnVAVxAwBhqgggqGf3eAujtTZMe+pdJPtM8x+P+vr'#10 +
-      'FwIDAQAB'#10 + '-----END PUBLIC KEY-----';
+      'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg4twIjlr5yckmYpVvGkc'#10 +
+      'yxt3rqvoQFMn+s4f89ZFnFJESv0my/qDiV1Tg8EDTxHcxEUIqM9ER8+inYJnfxoo'#10 +
+      'czhr35zmoyVbiNkZy7ORtFZbMD1qDtVL+aBJvAKV50c8ZwbkV+aSzvY2p15I1u2r'#10 +
+      'EKixFVqswwqo0kHbSgVfCW+x9xMT1QChlk9eYDEJ5/ugJD3e3q1YWCnVsGxtLiSc'#10 +
+      '8MI5KJdlBbd2lshOXC02LTNryjDEj61s5Qz8AUaEtrK8BxXH0WQB5hjVBmBLKE2k'#10 +
+      'Oh6L6iSeNHgnJg3RyrjaV1wzBJPbuo9r/HCVubfY+MqE444niC1d4u9DA8Wn44Eo'#10 +
+      'KwIDAQAB'#10 + '-----END PUBLIC KEY-----';
   private var
     FPubKeyFile : string;
     FPFXFile    : string;
