@@ -172,7 +172,7 @@ begin
   FAtWS := ATWebService(
     'https://servicos.portaldasfinancas.gov.pt:701/sgdtws/documentosTransporte',
     'https://servicos.portaldasfinancas.gov.pt/sgdtws/documentosTransporte/',
-    'ChaveCifraPublicaAT2020.pem',
+    'ChaveCifraPublicaAT2023.pem',
     'TESTEWebServices.pfx',
     'TESTEwebservice'
   );
@@ -186,7 +186,7 @@ begin
   FAtWS := ATWebService(
     'https://servicos.portaldasfinancas.gov.pt:700/fews/faturas',
     'http://servicos.portaldasfinancas.gov.pt/faturas/RegisterInvoice',
-    'ChaveCifraPublicaAT2020.pem',
+    'ChaveCifraPublicaAT2023.pem',
     'TESTEWebServices.pfx',
     'TESTEwebservice'
   );
@@ -200,7 +200,7 @@ begin
   FAtWS := ATWebService(
     'https://servicos.portaldasfinancas.gov.pt:400/fews/faturas',
     'http://servicos.portaldasfinancas.gov.pt/faturas/RegisterInvoice',
-    'ChaveCifraPublicaAT2020.pem',
+    'ChaveCifraPublicaAT2023.pem',
     ParamStr(1),
     ParamStr(2)
   );
@@ -225,7 +225,7 @@ begin
   FAtWS := ATWebService(
     'https://servicos.portaldasfinancas.gov.pt:401/sgdtws/documentosTransporte',
     'https://servicos.portaldasfinancas.gov.pt/sgdtws/documentosTransporte/',
-    'ChaveCifraPublicaAT2020.pem',
+    'ChaveCifraPublicaAT2023.pem',
     ParamStr(1),
     ParamStr(2)
   );
