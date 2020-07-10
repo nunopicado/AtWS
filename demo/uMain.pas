@@ -129,9 +129,9 @@ const
                 '          <PostalCode>8050-000</PostalCode>'+
                 '          <Country>PT</Country>'+
                 '        </CompanyAddress>'+
-                '        <DocumentNumber>GT 001/528</DocumentNumber>'+
+                '        <DocumentNumber>GT TESTE20200630/1</DocumentNumber>'+
                 '        <MovementStatus>N</MovementStatus>'+
-                '        <MovementDate>2017-08-16</MovementDate>'+
+                '        <MovementDate>2020-06-30</MovementDate>'+
                 '        <MovementType>GT</MovementType>'+
                 '        <CustomerTaxID>999999990</CustomerTaxID>'+
                 '        <CustomerAddress>'+
@@ -153,7 +153,7 @@ const
                 '          <PostalCode>9999-144</PostalCode>'+
                 '          <Country>PT</Country>'+
                 '        </AddressFrom>'+
-                '        <MovementStartTime>2017-08-18T14:50:00</MovementStartTime>'+
+                '        <MovementStartTime>2020-07-01T14:50:00</MovementStartTime>'+
                 '        <VehicleID>AA-00-00</VehicleID>'+
                 '        <Line>'+
                 '          <ProductDescription>Papel A4</ProductDescription>'+
