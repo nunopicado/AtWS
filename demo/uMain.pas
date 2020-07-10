@@ -31,6 +31,7 @@ uses
   , Forms
   , StdCtrls
   , AtWSvcIntf
+  , Vcl.ExtCtrls
   ;
 
 type
@@ -42,6 +43,8 @@ type
     bSendDoc: TButton;
     bSetupTestingFTWS: TButton;
     bSetupProductionFTWS: TButton;
+    pnlTools: TPanel;
+    Splitter: TSplitter;
     procedure bSetupProductionDTWSClick(Sender: TObject);
     procedure bSetupTestingDTWSClick(Sender: TObject);
     procedure bSendDocClick(Sender: TObject);
