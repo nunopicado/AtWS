@@ -45,11 +45,15 @@ type
     bSetupProductionFTWS: TButton;
     pnlTools: TPanel;
     Splitter: TSplitter;
+    bSetupTestingSEWS: TButton;
+    bSetupProductionSEWS: TButton;
     procedure bSetupProductionDTWSClick(Sender: TObject);
     procedure bSetupTestingDTWSClick(Sender: TObject);
     procedure bSendDocClick(Sender: TObject);
     procedure bSetupTestingFTWSClick(Sender: TObject);
     procedure bSetupProductionFTWSClick(Sender: TObject);
+    procedure bSetupTestingSEWSClick(Sender: TObject);
+    procedure bSetupProductionSEWSClick(Sender: TObject);
   private
     FAtWS: IAtWSvc;
   public
@@ -165,6 +169,30 @@ const
                 '    </S:Body>'+
                 '  </S:Envelope>';
 
+  SampleSEXML = '<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">' + sLineBreak +
+                '  <S:Header>' + sLineBreak +
+                '    <wss:Security xmlns:wss="http://schemas.xmlsoap.org/ws/2002/12/secext">' + sLineBreak +
+                '      <wss:UsernameToken>' + sLineBreak +
+                '        <wss:Username>555555550/1</wss:Username>' + sLineBreak +
+                '        <wss:Nonce></wss:Nonce>' + sLineBreak +
+                '        <wss:Password>123456789</wss:Password>' + sLineBreak +
+                '        <wss:Created></wss:Created>' + sLineBreak +
+                '      </wss:UsernameToken>' + sLineBreak +
+                '    </wss:Security>' + sLineBreak +
+                '  </S:Header>' + sLineBreak +
+                '  <S:Body>' + sLineBreak +
+                '    <ns2:registarSerie xmlns:ns2="http://at.gov.pt/">' + sLineBreak +
+                '      <serie>A2008212353</serie>' + sLineBreak +
+                '      <tipoSerie>N</tipoSerie>' + sLineBreak +
+                '      <classeDoc>SI</classeDoc>' + sLineBreak +
+                '      <tipoDoc>FT</tipoDoc>' + sLineBreak +
+                '      <numInicialSeq>1</numInicialSeq>' + sLineBreak +
+                '      <dataInicioPrevUtiliz>2022-01-01</dataInicioPrevUtiliz>' + sLineBreak +
+                '      <numCertSWFatur>0000</numCertSWFatur>' + sLineBreak +
+                '      <meioProcessamento>PI</meioProcessamento>' + sLineBreak +
+                '    </ns2:registarSerie>' + sLineBreak +
+                '  </S:Body>' + sLineBreak +
+                '</S:Envelope>';
 {$R *.dfm}
 
 procedure TfMain.bSetupTestingDTWSClick(Sender: TObject);
@@ -195,6 +223,20 @@ begin
   memoRequest.Text := FormatXMLData(SampleFTXML);
 end;
 
+procedure TfMain.bSetupTestingSEWSClick(Sender: TObject);
+begin
+  FAtWS := ATWebService(
+    'https://servicos.portaldasfinancas.gov.pt:722/SeriesWSService',
+    'http://at.gov.pt',
+    'ChaveCifraPublicaAT2023.pem',
+    'TESTEWebServices.pfx',
+    'TESTEwebservice'
+  );
+  bSendDoc.Caption := 'Enviar documento SE de Teste';
+  bSendDoc.Enabled := True;
+  memoRequest.Text := FormatXMLData(SampleSEXML);
+end;
+
 procedure TfMain.bSetupProductionFTWSClick(Sender: TObject);
 begin
   FAtWS := ATWebService(
@@ -207,6 +249,20 @@ begin
   bSendDoc.Caption := 'Enviar documento FT de Produção';
   bSendDoc.Enabled := True;
   memoRequest.Text := FormatXMLData(SampleFTXML);
+end;
+
+procedure TfMain.bSetupProductionSEWSClick(Sender: TObject);
+begin
+  FAtWS := ATWebService(
+    'https://servicos.portaldasfinancas.gov.pt:722/SeriesWSService',
+    'http://at.gov.pt',
+    'ChaveCifraPublicaAT2023.pem',
+    ParamStr(1),
+    ParamStr(2)
+  );
+  bSendDoc.Caption := 'Enviar documento SE de Teste';
+  bSendDoc.Enabled := True;
+  memoRequest.Text := FormatXMLData(SampleSEXML);
 end;
 
 procedure TfMain.bSendDocClick(Sender: TObject);

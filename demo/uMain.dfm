@@ -43,7 +43,7 @@ object fMain: TfMain
       629)
     object bSendDoc: TButton
       Left = 3
-      Top = 103
+      Top = 147
       Width = 236
       Height = 42
       Anchors = [akLeft, akTop, akRight]
@@ -54,8 +54,8 @@ object fMain: TfMain
       OnClick = bSendDocClick
     end
     object bSetupProductionDTWS: TButton
-      Left = 3
-      Top = 55
+      Left = 125
+      Top = 8
       Width = 114
       Height = 42
       Caption = 'Inicializar Webservice de Produ'#231#227'o DT'
@@ -85,8 +85,8 @@ object fMain: TfMain
       OnClick = bSetupTestingDTWSClick
     end
     object bSetupTestingFTWS: TButton
-      Left = 125
-      Top = 8
+      Left = 3
+      Top = 55
       Width = 114
       Height = 42
       Anchors = [akTop, akRight]
@@ -97,11 +97,33 @@ object fMain: TfMain
     end
     object memoResponse: TMemo
       Left = 3
-      Top = 151
+      Top = 195
       Width = 236
-      Height = 478
+      Height = 434
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 5
+    end
+    object bSetupTestingSEWS: TButton
+      Left = 3
+      Top = 102
+      Width = 114
+      Height = 42
+      Anchors = [akTop, akRight]
+      Caption = 'Inicializar Webservice de Testes SE'
+      TabOrder = 6
+      WordWrap = True
+      OnClick = bSetupTestingSEWSClick
+    end
+    object bSetupProductionSEWS: TButton
+      Left = 125
+      Top = 102
+      Width = 114
+      Height = 42
+      Anchors = [akTop, akRight]
+      Caption = 'Inicializar Webservice de Produ'#231#227'o SE'
+      TabOrder = 7
+      WordWrap = True
+      OnClick = bSetupProductionSEWSClick
     end
   end
 end
