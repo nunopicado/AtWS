@@ -254,7 +254,7 @@ end;
 procedure TfMain.bSetupProductionSEWSClick(Sender: TObject);
 begin
   FAtWS := ATWebService(
-    'https://servicos.portaldasfinancas.gov.pt:722/SeriesWSService',
+    'https://servicos.portaldasfinancas.gov.pt:422/SeriesWSService',
     'http://at.gov.pt',
     'ChaveCifraPublicaAT2023.pem',
     ParamStr(1),
